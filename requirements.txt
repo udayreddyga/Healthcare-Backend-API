@@ -1,6 +1,8 @@
-Django>=5.0
-djangorestframework
-dj-database-url
-whitenoise
-gunicorn
-psycopg2-binary
+asgiref==3.11.0
+Django==5.2.9
+djangorestframework==3.16.1
+gunicorn==23.0.0
+packaging==25.0
+python-dotenv==1.2.1
+sqlparse==0.5.5
+tzdata==2025.3

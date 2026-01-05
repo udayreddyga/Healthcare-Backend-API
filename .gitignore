@@ -1,33 +1,6 @@
-# Django
-*.pyc
-__pycache__/
-*.pyo
-*.pyd
-.Python
-env/
 venv/
-ENV/
-
-# Database
-*.sqlite3
-*.db
-
-# Environment variables
+__pycache__/
+*.pyc
+db.sqlite3
 .env
-.env.local
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Static files
 staticfiles/
-media/
-
-# Logs
-*.log
-
-# PostgreSQL data (if any)
-/pgdata/
