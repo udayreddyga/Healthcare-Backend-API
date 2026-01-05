@@ -8,11 +8,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "unsafe-secret-key-for-local")
 
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    ".onrender.com",
-]
+ALLOWED_HOSTS = ["*"]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://healthcare-backend-api-v6c7.onrender.com",
@@ -71,6 +67,7 @@ DATABASES = {
     "default": dj_database_url.config(
         default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
         conn_max_age=600,
+        ssl_require=not DEBUG,
     )
 }
 
