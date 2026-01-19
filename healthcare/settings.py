@@ -4,7 +4,7 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get("SECRET_KEY", "unsafe-secret-key-for-local")
+SECRET_KEY = "test-secret-key"
 
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
@@ -64,12 +64,11 @@ TEMPLATES = [
 WSGI_APPLICATION = "healthcare.wsgi.application"
 
 DATABASES = {
-    "default": dj_database_url.config(
-        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
-        conn_max_age=600,
-        ssl_require=not DEBUG,
+    'default': dj_database_url.config(
+        default='sqlite:///db.sqlite3'
     )
 }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
