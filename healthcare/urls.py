@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
+from django.http import JsonResponse
 from rest_framework.authtoken import views as auth_views
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
@@ -13,7 +14,8 @@ def get_my_token(request):
     return Response({'token': token.key})
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', lambda request: JsonResponse({"status": "Healthcare API is live"})),
+]
     
     
     path('api/doctors/', include('doctors.urls')),
